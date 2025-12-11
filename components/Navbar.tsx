@@ -40,10 +40,10 @@ export default function Navbar() {
 
   // Navigation Data
   const navLinks = [
-    { name: "Home", href: "#home", icon: Home },
-    { name: "About", href: "#about", icon: User },
-    { name: "Services", href: "#services", icon: Briefcase },
-    { name: "Contact", href: "#contact", icon: Mail },
+    { name: "Home", href: "/home", icon: Home },
+    { name: "About", href: "/about", icon: User },
+    { name: "Services", href: "/services", icon: Briefcase },
+    { name: "Contact", href: "/contact", icon: Mail },
   ];
 
   const chains = [
