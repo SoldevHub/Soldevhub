@@ -14,11 +14,15 @@ export default function Home() {
   };
   
   const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    // FIX APPLIED: Changed 'ease: "easeOut"' to its cubic-bezier equivalent [0, 0, 0.2, 1] 
-    // to satisfy the Framer Motion 'Variants' TypeScript type check without changing the UI animation.
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0, 0, 0.2, 1] } }
-  };
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+        opacity: 1, 
+        y: 0, 
+        // FIX: Added `as const` to resolve TypeScript error with `ease: "easeOut"`
+        transition: { duration: 0.6, ease: "easeOut" } as const 
+    }
+  };
+
 
   return (
     <main className="bg-slate-950 min-h-screen text-slate-200 selection:bg-purple-500/30">
