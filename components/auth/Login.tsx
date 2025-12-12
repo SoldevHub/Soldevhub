@@ -142,7 +142,7 @@ export default function Login() {
           {/* Footer Text - Sign Up */}
           <p className="mt-8 text-center text-sm text-slate-500">
             Don&apos;t have an account?{' '}
-            <Link href="/auth/signup" className="font-medium text-purple-500 hover:text-purple-400">
+            <Link href="/auth/sign-up" className="font-medium text-purple-500 hover:text-purple-400">
               Create an account
             </Link>
           </p>
