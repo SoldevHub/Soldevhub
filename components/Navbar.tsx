@@ -40,7 +40,7 @@ export default function Navbar() {
 
   // Navigation Data
   const navLinks = [
-    { name: "Home", href: "/home", icon: Home },
+    { name: "Home", href: "/", icon: Home },
     { name: "About", href: "/about", icon: User },
     { name: "Services", href: "/services", icon: Briefcase },
     { name: "Contact", href: "/contact", icon: Mail },
@@ -66,7 +66,7 @@ export default function Navbar() {
           
           {/* LOGO & APP NAME (Main Navbar) */}
           <div className="flex-shrink-0 cursor-pointer z-50">
-            <Link href="#home" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-900/50">
                 <span className="text-white font-bold text-2xl font-mono">S</span>
               </div>
@@ -128,7 +128,7 @@ export default function Navbar() {
 
             {/* Sign In Button */}
             <Link
-              href="#signin"
+              href="/signin"
               className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-5 py-2 rounded-full font-medium transition-all border border-slate-700"
             >
               <LogIn size={18} />
@@ -236,7 +236,7 @@ export default function Navbar() {
               {/* Sign In Button Mobile */}
               <div className="mt-auto pt-6 border-t border-slate-900">
                 <Link 
-                  href="#signin" 
+                  href="/signin" 
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg"
                 >
