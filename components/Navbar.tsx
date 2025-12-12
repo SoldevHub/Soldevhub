@@ -128,7 +128,7 @@ export default function Navbar() {
 
             {/* Sign In Button */}
             <Link
-              href="/signin"
+              href="/auth/sign-in"
               className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white px-5 py-2 rounded-full font-medium transition-all border border-slate-700"
             >
               <LogIn size={18} />
@@ -236,7 +236,7 @@ export default function Navbar() {
               {/* Sign In Button Mobile */}
               <div className="mt-auto pt-6 border-t border-slate-900">
                 <Link 
-                  href="/signin" 
+                  href="/auth/sign-in" 
                   onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg"
                 >
