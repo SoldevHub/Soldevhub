@@ -22,9 +22,7 @@ export const metadata: Metadata = {
     default: "SoldevHub | Solana Developer & Web3 Resource Center",
     template: "%s | SoldevHub", // Use for page-specific titles
   },
-  // Updated description: 'dApp' changed to 'app'
   description: "The premier hub for Solana developers. Find tutorials, starter kits, documentation, and the latest tools for building high-performance decentralized applications (apps) on the Solana blockchain. Learn about alpha strategies and connect with local crypto communities.",
-  // Updated keywords: Added all requested terms
   keywords: [
     "Solana",
     "Solana development",
@@ -44,7 +42,6 @@ export const metadata: Metadata = {
     "Solana apps",
   ],
   authors: [{ name: "SoldevHub Team" }],
-  // Canonical URL - Updated to your site
   metadataBase: new URL('https://www.soldevhub.site'), 
   alternates: {
     canonical: '/',
@@ -97,6 +94,12 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
+  
+  // --- GOOGLE SITE VERIFICATION ADDED HERE ---
+  verification: {
+    google: 'xm-iveHR0zwNHfvIA3ivXNzE8hl7kcvnoeblRld4Io',
+  },
+  // --- END GOOGLE SITE VERIFICATION ---
 };
 // --- END FULL SEO METADATA ---
 
