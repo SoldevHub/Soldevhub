@@ -15,47 +15,39 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Define your base domain explicitly
+const DOMAIN = "https://www.soldevhub.site";
+
 // --- START FULL SEO METADATA ---
 export const metadata: Metadata = {
+  metadataBase: new URL(DOMAIN), 
+  
   // 1. Basic SEO Tags
   title: {
     default: "SoldevHub | Solana Developer & Web3 Resource Center",
-    template: "%s | SoldevHub", // Use for page-specific titles
+    template: "%s | SoldevHub",
   },
-  description: "The premier hub for Solana developers. Find tutorials, starter kits, documentation, and the latest tools for building high-performance decentralized applications (apps) on the Solana blockchain. Learn about alpha strategies and connect with local crypto communities.",
+  description: "The premier hub for Solana developers. Find tutorials, starter kits, documentation, and the latest tools for building high-performance decentralized applications (apps) on the Solana blockchain.",
   keywords: [
-    "Solana",
-    "Solana development",
-    "Web3",
-    "Solana ecosystem",
-    "blockchain development",
-    "Rust",
-    "Anchor framework",
-    "Solana tutorials",
-    "SoldevHub",
-    "alpha",
-    "sufiyanu",
-    "kargi cryptors",
-    "achuau cryptor",
-    "zaria cryptor",
-    "ikara cryptos",
-    "Solana apps",
+    "Solana", "Solana development", "Web3", "Solana ecosystem", "blockchain development",
+    "Rust", "Anchor framework", "SoldevHub", "alpha", "sufiyanu", 
+    "kargi cryptors", "achuau cryptor", "zaria cryptor", "ikara cryptos", "Solana apps",
   ],
   authors: [{ name: "SoldevHub Team" }],
-  metadataBase: new URL('https://www.soldevhub.site'), 
+  
   alternates: {
     canonical: '/',
   },
 
-  // 2. Open Graph (OG) Tags - For Social Media Sharing
+  // 2. Open Graph (OG) Tags - Fixed for Mobile
   openGraph: {
     title: 'SoldevHub | Solana Developer & Web3 Resource Center',
-    description: 'The premier hub for Solana developers. Find tutorials, starter kits, documentation, and the latest tools for building high-performance decentralized applications (apps) on the Solana blockchain.',
-    url: 'https://www.soldevhub.site', // Updated to your site
+    description: 'The premier hub for Solana developers. Tutorials, starter kits, and tools for building high-performance apps.',
+    url: DOMAIN, 
     siteName: 'SoldevHub',
     images: [
       {
-        url: '/appLogo.png', // Updated to use local public folder asset
+        url: `${DOMAIN}/appLogo.png`, // EXPLICIT FULL URL for mobile reliability
         width: 1200, 
         height: 630, 
         alt: 'Solana Developer Hub Logo',
@@ -65,41 +57,43 @@ export const metadata: Metadata = {
     type: 'website',
   },
 
-  // 3. Twitter Card Tags - For Twitter Sharing
+  // 3. Twitter Card Tags
   twitter: {
-    card: 'summary_large_image', // Best practice for rich media previews
+    card: 'summary_large_image',
     title: 'SoldevHub | Solana Developer & Web3 Resource Center',
-    description: 'The premier hub for Solana developers. Tutorials, starter kits, and tools for building high-performance apps on the Solana blockchain.',
-    creator: '@SoldevHub', // REMINDER: Customize this handle!
-    images: ['/appLogo.png'], // Updated to use local public folder asset
+    description: 'The premier hub for Solana developers. Tutorials, starter kits, and tools for building high-performance apps.',
+    creator: '@SoldevHub',
+    images: [`${DOMAIN}/appLogo.png`], // EXPLICIT FULL URL
   },
 
-  // 4. Other Standard Tags
+  // 4. Icons - Fixed for Google Search & Mobile Home Screen
+  icons: {
+    // Google prefers a high-quality PNG. Ensure you have 'icon.png' (square, e.g., 192x192) in public folder
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' }, // Fallback for old browsers
+      { url: '/icon.png', type: 'image/png' }, // Google Search Result Icon (Recommended)
+    ],
+    // iOS Home Screen Icon
+    apple: [
+      { url: '/apple-icon.png' }, 
+    ],
+  },
+
   robots: {
     index: true,
     follow: true,
-    nocache: true,
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
-  },
-  manifest: '/site.webmanifest',
   
-  // --- GOOGLE SITE VERIFICATION ADDED HERE ---
   verification: {
     google: 'xm-iveHR0zwNHfvIA3ivXNzE8hl7kcvnoeblRld4Io',
   },
-  // --- END GOOGLE SITE VERIFICATION ---
 };
 // --- END FULL SEO METADATA ---
 
