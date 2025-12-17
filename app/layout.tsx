@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script"; // 1. Import the Script component
 import "./globals.css";
 
 import Navbar from "@/components/Navbar";
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
 
-  // 2. Open Graph (OG) Tags - Fixed for Mobile
+  // 2. Open Graph (OG) Tags
   openGraph: {
     title: 'SoldevHub | Solana Developer & Web3 Resource Center',
     description: 'The premier hub for Solana developers. Tutorials, starter kits, and tools for building high-performance apps.',
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     siteName: 'SoldevHub',
     images: [
       {
-        url: `${DOMAIN}/appLogo.png`, // EXPLICIT FULL URL for mobile reliability
+        url: `${DOMAIN}/appLogo.png`, // Absolute URL for mobile reliability
         width: 1200, 
         height: 630, 
         alt: 'Solana Developer Hub Logo',
@@ -63,17 +64,15 @@ export const metadata: Metadata = {
     title: 'SoldevHub | Solana Developer & Web3 Resource Center',
     description: 'The premier hub for Solana developers. Tutorials, starter kits, and tools for building high-performance apps.',
     creator: '@SoldevHub',
-    images: [`${DOMAIN}/appLogo.png`], // EXPLICIT FULL URL
+    images: [`${DOMAIN}/appLogo.png`], // Absolute URL
   },
 
-  // 4. Icons - Fixed for Google Search & Mobile Home Screen
+  // 4. Icons
   icons: {
-    // Google prefers a high-quality PNG. Ensure you have 'icon.png' (square, e.g., 192x192) in public folder
     icon: [
-      { url: '/favicon.ico', sizes: 'any' }, // Fallback for old browsers
-      { url: '/icon.png', type: 'image/png' }, // Google Search Result Icon (Recommended)
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png' }, 
     ],
-    // iOS Home Screen Icon
     apple: [
       { url: '/apple-icon.png' }, 
     ],
@@ -111,6 +110,16 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+
+        {/* Google AdSense Script 
+            strategy="afterInteractive" ensures it loads quickly without blocking the UI
+        */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9241182560906060"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
